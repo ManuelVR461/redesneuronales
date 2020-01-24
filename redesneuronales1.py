@@ -155,14 +155,15 @@ for i in range(2500):
       for i1, x1 in enumerate(_x1):
         _Y[i0, i1] = entrenamiento(neural_net, np.array([[x0, x1]]), Y, funcion_coste, entrenar=False)[0][0]    
 
-    plt.pcolormesh(_x0, _x1, _Y, cmap="coolwarm")
-    plt.axis("equal")
 
-    plt.scatter(X[Y[:,0] == 0, 0], X[Y[:,0] == 0, 1], c="skyblue")
-    plt.scatter(X[Y[:,0] == 1, 0], X[Y[:,0] == 1, 1], c="salmon")
+plt.pcolormesh(_x0, _x1, _Y, cmap="coolwarm")
+plt.axis("equal")
 
-    clear_output(wait=True)
-    plt.show()
-    plt.plot(range(len(loss)), loss)
-    plt.show()
-    time.sleep(0.5)
+plt.scatter(X[Y[:,0] == 0, 0], X[Y[:,0] == 0, 1], c="skyblue")
+plt.scatter(X[Y[:,0] == 1, 0], X[Y[:,0] == 1, 1], c="salmon")
+
+clear_output(wait=True)
+plt.show()
+plt.plot(range(len(loss)), loss)
+plt.show()
+time.sleep(0.5)
